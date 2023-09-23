@@ -8,6 +8,15 @@
    <script src="https://telegram.org/js/telegram-web-app.js"></script> <!--Подключаем скрипт от телеграм-->
 
    <style>
+    .title {
+        color: var(--tg-theme-link-color);
+        font-weight: bold;
+         background: var(--tg-theme-bg-color);
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         font-size: 35px;
+    }
       body{
          color: var(--tg-theme-text-color);
          background: var(--tg-theme-bg-color);
@@ -19,6 +28,7 @@
 
       .hint{
          color: var(--tg-theme-hint-color);
+         text-align: center;
       }
 
       .link{
@@ -45,9 +55,8 @@
 <body>
    <div id="usercard"> <!--Карта профиля, человека, который к нам обратился-->
    </div>
-   <p>Just text</p> <!--Просто текст для проверки-->
-   <a class="link" href="https://mihailgok.ru">Link</a> <!--Просто ссылка для проверки-->
-   <p class="hint">Some little hint</p> <!--Просто текст-подсказка для проверки-->
+   <h1 class="title">ЕСАБП</h1> <!--Просто текст для проверки-->
+   <p class="hint">Первый этап - авторизация. Мы не хотим, чтобы сторонний человек изучал наш сервис</p> <!--Просто текст-подсказка для проверки-->
    <button id="btn" class="button">Show/Hide Main Button</button> <!--Кнопка, чтобы скрыть / показать основную кнопку-->
    <button id="btnED" class="button">Enable/Disable Main Button</button> <!--Кнопка, чтобы сделать кнопку активной/неактивной-->
 </body>
@@ -87,7 +96,7 @@
    });
 
    Telegram.WebApp.onEvent('mainButtonClicked', function(){
-      tg.sendData("some string that we need to send"); 
+      tg.sendData("Тестовый запрос с данными о вас"); 
       //при клике на основную кнопку отправляем данные в строковом виде
    });
 
@@ -107,8 +116,8 @@
 
 
    //работает только в attachment menu
-   // let pic = document.createElement('img'); //создаем img
-   // pic.src = tg.initDataUnsafe.user.photo_url; //задаём src 
-   // usercard.appendChild(pic); //добавляем элемент в карточку 
+   let pic = document.createElement('img'); //создаем img
+   pic.src = tg.initDataUnsafe.user.photo_url; //задаём src 
+   usercard.appendChild(pic); //добавляем элемент в карточку 
 </script>
 </html>
