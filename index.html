@@ -29,6 +29,8 @@
       .hint{
          color: var(--tg-theme-hint-color);
          text-align: center;
+         padding-right: 20px;
+         padding-left: 20px;
       }
 
       .link{
@@ -72,17 +74,16 @@
 </head>
 
 <body>
-   <div id="usercard"> <!--Карта профиля, человека, который к нам обратился-->
-   </div>
-   <h1 class="title">ЕСАБП</h1> <!--Просто текст для проверки-->
+   <h1 class="title">ЕСАБП</h1>
+   <div id="usercard"></div>
    <p class="hint">Первый этап - авторизация. Мы не хотим, чтобы сторонний человек изучал наш сервис</p> <!--Просто текст-подсказка для проверки-->
 
     <input type="text" name="login" placeholder="Логин"></input>
     <input type="password" name="password" placeholder="Пароль"/>
     <input class="login" type="button" name="print" value="Войти" />
-
-   <button id="btn" class="button">Show/Hide Main Button</button> <!--Кнопка, чтобы скрыть / показать основную кнопку-->
-   <button id="btnED" class="button">Enable/Disable Main Button</button> <!--Кнопка, чтобы сделать кнопку активной/неактивной-->
+<!--
+   <button id="btn" class="button">Show/Hide Main Button</button>--> <!--Кнопка, чтобы скрыть / показать основную кнопку-->
+  <!--<button id="btnED" class="button">Enable/Disable Main Button</button>--> <!--Кнопка, чтобы сделать кнопку активной/неактивной-->
 </body>
 
 <script>
@@ -127,12 +128,12 @@
 
    let usercard = document.getElementById("usercard"); //получаем блок usercard 
 
-   let profName = document.createElement('p'); //создаем параграф
-   profName.innerText = `${tg.initDataUnsafe.user.first_name}
-   ${tg.initDataUnsafe.user.last_name}
-   ${tg.initDataUnsafe.user.username} (${tg.initDataUnsafe.user.language_code})`;
+//   let profName = document.createElement('p'); //создаем параграф
+ //  profName.innerText = `${tg.initDataUnsafe.user.first_name}
+ //  ${tg.initDataUnsafe.user.last_name}
+ //  ${tg.initDataUnsafe.user.username} (${tg.initDataUnsafe.user.language_code})`;
    //выдем имя, "фамилию", через тире username и код языка
-   usercard.appendChild(profName); //добавляем 
+ //  usercard.appendChild(profName); //добавляем 
 
    let userid = document.createElement('p'); //создаем еще параграф 
    userid.innerText = `${tg.initDataUnsafe.user.id}`; //показываем user_id
